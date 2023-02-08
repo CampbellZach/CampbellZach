@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Home page {% endblock %} </title>
+    <link href="/static/style.css" rel= 'stylesheet'>
+
+</head>
+<body>
+    <nav>
+        <ul>
+            {% if current_user.is_authenticated %}
+                <li><a href = "/view">View Account</a></li>
+                <li><a href = "/logout">logout</a></li>
+                <li><a href = "/runs">Add Runs</a></li>
+                <li><a href = "/secret">A treat</a></li>
+
+            {% else %}
+                <li><a href = "/create">Create</a></li>
+                <li><a href = "/login">Login</a></li>
+
+            {% endif %}
+        </ul>
+    </nav>
+
+    {% block content %}
+    <h1>Welcome to Ski Bums 'n' CO </h1><br>
+    <p>I hope you have a fun time. Please create an account to get started</p>
+    {% endblock %}
+</body>
+</html>

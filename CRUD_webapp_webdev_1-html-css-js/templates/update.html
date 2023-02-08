@@ -1,0 +1,16 @@
+{% extends "index.html" %}
+{% block title %} update {% endblock %}
+{% block content %}
+<form action="/update/{{Runs.id}}" method="POST">
+    <label for="runName">Run Name: </label>
+    <input name ="runName" id="runName" type="text">
+    <br>
+    <label for="time">Time: </label>
+    <input name ="time" id="time" type="number">
+    <br>
+    <label for="difficulty">Difficulty: </label>
+    <input name ="difficulty" id= "difficulty" type="text">
+    <br>
+    <input name="CREATE!" type="submit">
+</form>
+{% endblock %}

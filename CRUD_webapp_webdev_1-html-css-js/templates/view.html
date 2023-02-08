@@ -1,0 +1,24 @@
+{% extends "index.html" %}
+{% block title %} view {% endblock %}
+{% block content %}
+<table>
+    <tr>
+        <th>Runs</th>
+        <th>Time</th>
+        <th>Difficulty</th>
+    </tr>
+{% for Runs in runs %}
+<tr>
+    <td>{{Runs.runName}}</td>
+    <td>{{Runs.time}}</td>
+    <td>{{Runs.difficulty}}</td>
+</tr>
+<tr>
+    <td><a href="/update/{{Runs.id}}">Update</a></td>
+</tr>
+<tr>
+    <td><a href="/delete/{{Runs.id}}">Delete</a></td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

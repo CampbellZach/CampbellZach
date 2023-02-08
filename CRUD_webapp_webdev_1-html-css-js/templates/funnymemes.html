@@ -1,0 +1,46 @@
+{% extends "index.html" %}
+{% block title %} Welcome To Hell{% endblock %}
+{% block content %}
+
+<script>
+    var array=['/static/rickRoll.jfif', '/static/binary.jfif', '/static/codingmeme.jfif', '/static/funny.jpeg','/static/python.jfif']
+    function start(){
+            for(var i = 0; i < array.length-1; i++){
+                var element = document.getElementById(i);
+            }
+        }
+    function updatePicture(img){
+            img.src = array[img.id];
+            imgTimeOut();
+            Flip1= img.id;
+        }
+        function flipBoth(){
+            var one = document.getElementById(Flip1);
+            one.src = '/static/black.jfif';
+        }
+    function RandShuffle(){
+            var imgs = document.getElementsByTagName('img');
+            console.log(imgs);
+            for(var i = array.length - 1; i> 0; i--){
+                var rand = Math.floor(Math.random() * i);
+                var temp = array[i];
+                array[i] = array[rand];
+                array[rand] = temp;
+        
+            }
+        }
+    function imgTimeOut(){
+        setTimeout(flipBoth, 4000);
+        RandShuffle();
+    }
+    RandShuffle();
+    window.onload = start;
+    
+</script>
+<center>
+<h1>Click me for a fun trip into JavaScript</h1>
+<p>Click once and wait for image to return to its original state.</p>
+
+<img src= '/static/black.jfif' style="width:500px;height: 500px;" id= '0' onclick=updatePicture(this)></td>
+</center>
+{% endblock %}

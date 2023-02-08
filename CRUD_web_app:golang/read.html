@@ -1,0 +1,20 @@
+<a href="http://localhost:5000/create">Create</a> 
+<a href="http://localhost:5000/logout">Logout</a>
+<a href="http://localhost:5000/">Home</a> 
+
+<h1>Your Animals!</h1>
+{{range .}}
+    {{if ne .Name "h1"}}
+    <span>{{.Name}} {{.Age}}
+        <form action="/update">
+            <input type="hidden" name="id" value="{{.Id}}">
+            <input type="submit" value="UPDATE">
+        </form>
+        
+        <form action="/delete">
+            <input type="hidden" name = "id" value="{{.Id}}">
+            <input type="submit" value="DELETE">
+        </form>
+    </span><br>
+    {{end}}
+{{end}}

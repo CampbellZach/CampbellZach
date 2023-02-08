@@ -1,0 +1,13 @@
+<a href="http://localhost:5000/create">Create</a> 
+<a href="http://localhost:5000/read">Read</a> 
+<a href="http://localhost:5000/">Home</a> 
+<a href="http://localhost:5000/logout">Logout</a>
+<h1>Update your Animals</h1>
+
+<form action="/update" method="POST">
+    <input type="hidden" name="id" value="{{.Id}}">
+    <input type="text" name="name" value="{{.Name}}" >
+    <input type="number" name="age" value="{{.Age}}">
+    <input type="submit" value="UPDATE">
+    
+</form>

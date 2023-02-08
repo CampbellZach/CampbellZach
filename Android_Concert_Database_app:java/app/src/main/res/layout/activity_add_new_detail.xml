@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pictureStringView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AddNewDetailActivity">
+
+    <EditText
+        android:id="@+id/artistName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Enter Artist's Name"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/paraView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Enter your favorite Songs or moments from this artist. This is also a good place to write how you feel about this artist and if you'd see them again!"
+        android:inputType="textMultiLine" />
+
+    <TextView
+        android:id="@+id/picStr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/dateSelected"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/imagePreview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_launcher_foreground" />
+
+    <Button
+        android:id="@+id/picture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="picture"
+        android:text="Take Picture" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="dateSetter"
+        android:text="Select date" />
+
+    <Button
+        android:id="@+id/Finish"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="addTodb"
+        android:text="Finish" />
+</LinearLayout>
